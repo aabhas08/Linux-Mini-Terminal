@@ -209,9 +209,11 @@ void mypipe(char* str)
 	if(input==1)
 	{
 //		previ = dup(0);
-		int fd=open(arg[2],O_RDONLY);
-//			printf("|%s| opening file %d 1=%s\n",arg[2],fd,arg[1]);
-		arg[1]=NULL;
+		int fd=open(arg[stpipe[0]-1],O_RDONLY);
+//		char te[123];
+//		getcwd(te,123);
+//		printf("|%s| opening file %d path=%s\n",arg[2],fd,te);
+		arg[stpipe[0]-2]=NULL;
 		if(fd<0)
 		{	
 			puts("input file missing");
